@@ -72,6 +72,14 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(
         tabPanel(
+          tags$a(
+            href = "https://docs.google.com/forms/d/e/1FAIpQLSeBQXchOTSpn04HpxKfxvJjRjOBuA4cGuMjTPvF74wEURmCNw/viewform?usp=publish-editor", 
+            target = "_blank", 
+            class = "btn btn-default", 
+            "FAVORITE COLOR"
+          )
+        ),
+        tabPanel(
           "Growth curves",
           br(),
           plotOutput("growth_plot", height = "500px"),
