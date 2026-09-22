@@ -1,12 +1,12 @@
-<!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWVG6BYSDE"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    
-    gtag('config', 'G-RWVG6BYSDE');
-    </script>
+# <!-- Google tag (gtag.js) -->
+#   <script async src="https://www.googletagmanager.com/gtag/js?id=G-RWVG6BYSDE"></script>
+#     <script>
+#     window.dataLayer = window.dataLayer || [];
+#     function gtag(){dataLayer.push(arguments);}
+#     gtag('js', new Date());
+#     
+#     gtag('config', 'G-RWVG6BYSDE');
+#     </script>
       
 library(shiny)
 library(ggplot2)
@@ -15,6 +15,23 @@ library(ggplot2)
 # Rename this file to app.R before placing it in a Shinylive repository.
 
 ui <- fluidPage(
+    
+    tags$head(
+      tags$script(
+        async = NA,
+        src = "https://www.googletagmanager.com/gtag/js?id=G-ABC1234567"
+      ),
+      tags$script(
+        HTML("
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-RWVG6BYSDE');
+      ")
+      )
+    ),
+    
+    # The remainder of the existing interface follows here
   tags$head(
     tags$style(HTML("
       .well { background-color: #f5f8f4; }
