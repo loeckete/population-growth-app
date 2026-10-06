@@ -72,14 +72,6 @@ ui <- fluidPage(
     mainPanel(
       tabsetPanel(
         tabPanel(
-          tags$a(
-            href = "https://docs.google.com/forms/d/e/1FAIpQLSeBQXchOTSpn04HpxKfxvJjRjOBuA4cGuMjTPvF74wEURmCNw/viewform?usp=publish-editor", 
-            target = "_blank", 
-            class = "btn btn-default", 
-            "FAVORITE COLOR"
-          )
-        ),
-        tabPanel(
           "Growth curves",
           br(),
           plotOutput("growth_plot", height = "500px"),
@@ -216,7 +208,7 @@ ui <- fluidPage(
           ),
           p(
             strong("Important: "),
-            "Carrying capacity is not necessarily fixed in nature. It can change when resources, climate, habitat, competitors, or predators change."
+            "Carrying capacity is not necessarily fixed in nature. It can change when resources, climate, habitat, competitors, or predators change. Choose one of these factors and explain how they affect carrying capacity."
           )
         )
       )
@@ -541,7 +533,7 @@ server <- function(input, output, session) {
 
   output$prompt <- renderText({
     if (input$n0 < input$k / 2) {
-      "At approximately what population size does logistic growth proceed most rapidly?"
+      "At approximately what population size is the logistic growth rate the greatest?"
     } else {
       "Why does logistic growth slow when the population begins near carrying capacity?"
     }
